@@ -6,7 +6,7 @@ import com.noobied.studentmodule.entity.Student;
 //Mapper class to map Entity to DTO
 public class StudentDtoMapper {
     public StudentDTO convertEntityToDTO(Student entity){
-        StudentDTO dto = new StudentDTO(entity.getId(), entity.getFname(), entity.getFname());
+        StudentDTO dto = new StudentDTO(entity.getId(), entity.getFname(), entity.getLname());
         return dto;
     }
 

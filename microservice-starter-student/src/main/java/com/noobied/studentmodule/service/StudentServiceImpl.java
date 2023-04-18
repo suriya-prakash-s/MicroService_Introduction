@@ -38,6 +38,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDTO> getAllStudents() {
         List<Student> allStudents = repository.findAll();
+        if(allStudents.size()==0) {
+            throw new StudentNotFoundException("No Students Available");
+        }
         List<StudentDTO> studentDTOs = allStudents.stream()
                 .map(student -> entityToDto.convertEntityToDTO(student))
                 .collect(Collectors.toList());
